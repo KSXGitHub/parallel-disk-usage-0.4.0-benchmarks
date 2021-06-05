@@ -1,0 +1,24 @@
+[cols="<,>,>"]
+|===
+| Command | Mean [ms] | Min…Max [ms]
+
+| `pdu --max-depth=1 tmp.sample`
+| 128.2 ± 6.9
+| 122.0…155.6
+
+| `dutree --summary tmp.sample`
+| 314.5 ± 5.7
+| 307.6…327.2
+
+| `dua --apparent-size tmp.sample`
+| 231.5 ± 18.1
+| 206.8…282.6
+
+| `ncdu -o /dev/null -0 tmp.sample`
+| 203.7 ± 4.3
+| 199.2…213.9
+
+| `du --apparent-size --total tmp.sample`
+| 189.7 ± 3.0
+| 186.0…196.2
+|===

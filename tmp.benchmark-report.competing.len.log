@@ -1,0 +1,38 @@
+Benchmark #1: pdu --quantity=len tmp.sample
+  Time (mean ± σ):     150.1 ms ±  34.7 ms    [User: 93.9 ms, System: 155.6 ms]
+  Range (min … max):   117.8 ms … 229.7 ms    22 runs
+ 
+  Warning: Statistical outliers were detected. Consider re-running this benchmark on a quiet PC without any interferences from other programs. It might help to use the '--warmup' or '--prepare' options.
+ 
+Benchmark #2: dust --apparent-size tmp.sample
+  Time (mean ± σ):     550.7 ms ±  21.7 ms    [User: 707.7 ms, System: 237.4 ms]
+  Range (min … max):   525.7 ms … 593.4 ms    10 runs
+ 
+Benchmark #3: dutree tmp.sample
+  Time (mean ± σ):      3.810 s ±  0.036 s    [User: 1.485 s, System: 2.322 s]
+  Range (min … max):    3.758 s …  3.874 s    10 runs
+ 
+Benchmark #4: dua --apparent-size tmp.sample
+  Time (mean ± σ):     235.0 ms ±  16.8 ms    [User: 263.8 ms, System: 197.6 ms]
+  Range (min … max):   210.2 ms … 279.7 ms    13 runs
+ 
+Benchmark #5: ncdu -o /dev/stdout -0 tmp.sample
+  Time (mean ± σ):     213.4 ms ±   6.7 ms    [User: 85.8 ms, System: 127.0 ms]
+  Range (min … max):   205.4 ms … 225.5 ms    13 runs
+ 
+Benchmark #6: gdu --show-apparent-size --non-interactive --no-progress tmp.sample
+  Time (mean ± σ):     318.9 ms ±   7.2 ms    [User: 398.2 ms, System: 211.7 ms]
+  Range (min … max):   308.1 ms … 330.8 ms    10 runs
+ 
+Benchmark #7: du --apparent-size tmp.sample
+  Time (mean ± σ):     196.6 ms ±   4.3 ms    [User: 68.7 ms, System: 127.4 ms]
+  Range (min … max):   189.1 ms … 204.5 ms    15 runs
+ 
+Summary
+  'pdu --quantity=len tmp.sample' ran
+    1.31 ± 0.30 times faster than 'du --apparent-size tmp.sample'
+    1.42 ± 0.33 times faster than 'ncdu -o /dev/stdout -0 tmp.sample'
+    1.57 ± 0.38 times faster than 'dua --apparent-size tmp.sample'
+    2.13 ± 0.49 times faster than 'gdu --show-apparent-size --non-interactive --no-progress tmp.sample'
+    3.67 ± 0.86 times faster than 'dust --apparent-size tmp.sample'
+   25.39 ± 5.88 times faster than 'dutree tmp.sample'

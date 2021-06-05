@@ -1,0 +1,26 @@
+Benchmark #1: pdu --no-sort tmp.sample
+  Time (mean ± σ):     125.8 ms ±   3.5 ms    [User: 94.6 ms, System: 151.4 ms]
+  Range (min … max):   120.9 ms … 136.0 ms    23 runs
+ 
+Benchmark #2: du --apparent-size tmp.sample
+  Time (mean ± σ):     193.3 ms ±   4.3 ms    [User: 68.3 ms, System: 124.6 ms]
+  Range (min … max):   188.0 ms … 203.3 ms    15 runs
+ 
+Benchmark #3: dua --apparent-size tmp.sample
+  Time (mean ± σ):     227.1 ms ±   9.7 ms    [User: 248.5 ms, System: 199.4 ms]
+  Range (min … max):   214.6 ms … 243.9 ms    12 runs
+ 
+Benchmark #4: ncdu -o /dev/stdout -0 tmp.sample
+  Time (mean ± σ):     204.2 ms ±   6.7 ms    [User: 79.8 ms, System: 123.9 ms]
+  Range (min … max):   192.1 ms … 221.7 ms    14 runs
+ 
+Benchmark #5: gdu --show-apparent-size --non-interactive --no-progress tmp.sample
+  Time (mean ± σ):     302.0 ms ±   7.6 ms    [User: 388.1 ms, System: 188.7 ms]
+  Range (min … max):   292.8 ms … 318.6 ms    10 runs
+ 
+Summary
+  'pdu --no-sort tmp.sample' ran
+    1.54 ± 0.05 times faster than 'du --apparent-size tmp.sample'
+    1.62 ± 0.07 times faster than 'ncdu -o /dev/stdout -0 tmp.sample'
+    1.81 ± 0.09 times faster than 'dua --apparent-size tmp.sample'
+    2.40 ± 0.09 times faster than 'gdu --show-apparent-size --non-interactive --no-progress tmp.sample'
